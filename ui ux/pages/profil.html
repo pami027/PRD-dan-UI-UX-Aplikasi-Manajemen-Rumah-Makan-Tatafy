@@ -1,0 +1,28 @@
+<div class="card" style="padding-bottom:17px;">
+  <h2>Profil Pengguna & Restoran</h2>
+  <div class="profil-wrap">
+    <div class="profil-avatar">
+      <img src="https://ui-avatars.com/api/?name=Owner+Demo&background=6366F1&color=fff&size=96" width="84" id="user-avatar-prev" style="border-radius:50%"/>
+      <p style="font-size:13px;color:#888;margin-top:9px">Foto profil hanya contoh</p>
+    </div>
+    <form class="profil-bio" id="user-profile">
+      <label>Nama</label><input type="text" value="Owner Demo" required readonly>
+      <label>Email</label><input type="email" value="owner@email.com" required readonly>
+      <label>Ganti Password</label><input type="password" placeholder="Password baru..." readonly>
+      <button type="button">Simpan Profil</button>
+    </form>
+    <form class="profil-restaurant" id="resto-profile">
+      <label>Nama Restoran</label><input type="text" value="RM Sederhana" required readonly>
+      <label>Alamat Restoran</label><input type="text" value="Jl. Contoh No. 21, Kota Fiksi" readonly>
+      <label>No Telepon</label><input type="tel" value="08123456799" readonly>
+      <button type="button">Simpan Data Restoran</button>
+    </form>
+  </div>
+</div>
+<script> 
+// Avatar preview & save
+let avinput=document.getElementById('user-avatar-input'),avprev=document.getElementById('user-avatar-prev');
+avinput.onchange=function(){let f=avinput.files[0];if(f){let r=new FileReader();r.onload=function(e){avprev.src=e.target.result;localStorage.setItem('avatar_b64',e.target.result);};r.readAsDataURL(f);}}
+// Load avatar from storage
+window.addEventListener('DOMContentLoaded',()=>{let av=localStorage.getItem('avatar_b64');if(av)avprev.src=av;});
+</script>

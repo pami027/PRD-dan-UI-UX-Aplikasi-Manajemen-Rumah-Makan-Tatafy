@@ -1,0 +1,52 @@
+<div class="card">
+  <h2>Laporan Keuangan</h2>
+  <div class="stat-card shadow-sm">
+    <div>Total Penjualan: <b style="color:#2dcc8c">Rp4.200.000</b></div>
+    <div>Total Pengeluaran: <b style="color:#E26CA5">Rp2.030.000</b></div>
+    <div>Margin: <b style="color:#3846fc">Rp2.170.000</b></div>
+  </div>
+  <br>
+  <canvas id="laporanChart" width="380" height="90" style="display:block;margin:0 auto 17px auto;max-width:96%;border-radius:15px"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+  setTimeout(()=>{
+    new Chart(document.getElementById('laporanChart'), {
+      type: 'bar',
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul"],
+        datasets: [{ label: 'Omzet', data: [410,560,720,640,530,470,600], backgroundColor:'#6366F1B0'}]
+      }, options: {responsive:true,plugins:{legend:{display:false}}}
+    })
+  },200);
+  </script>
+  <div class="export-tools">
+    <button>Export Excel</button>
+    <button>Cetak PDF</button>
+  </div>
+</div>
+<div class="card">
+  <h3>Transaksi POS</h3>
+  <table>
+    <thead><tr><th>Waktu</th><th>Item</th><th>Total</th><th>Kasir</th></tr></thead>
+    <tbody>
+      <tr><td>2024-07-03 12:00</td><td>3</td><td>Rp110.000</td><td>Budi</td></tr>
+      <tr><td>2024-07-03 13:21</td><td>2</td><td>Rp49.000</td><td>Sri</td></tr>
+      <tr><td>2024-07-02 15:10</td><td>5</td><td>Rp270.000</td><td>Doni</td></tr>
+      <tr><td>2024-07-01 09:22</td><td>2</td><td>Rp60.000</td><td>Budi</td></tr>
+      <tr><td>2024-07-01 17:03</td><td>3</td><td>Rp96.000</td><td>Sri</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="card">
+  <h3>Riwayat Pengeluaran</h3>
+  <table>
+    <thead><tr><th>Tanggal</th><th>Nama</th><th>Nominal</th></tr></thead>
+    <tbody>
+      <tr><td>2024-07-01</td><td>Beli Beras</td><td>Rp120.000</td></tr>
+      <tr><td>2024-07-01</td><td>Gaji Karyawan</td><td>Rp1.200.000</td></tr>
+      <tr><td>2024-07-02</td><td>Servis Mesin</td><td>Rp110.000</td></tr>
+      <tr><td>2024-07-02</td><td>Beli Minyak Goreng</td><td>Rp59.000</td></tr>
+      <tr><td>2024-07-03</td><td>Tagihan Listrik</td><td>Rp330.000</td></tr>
+    </tbody>
+  </table>
+</div>

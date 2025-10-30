@@ -1,0 +1,25 @@
+<div class="card form-auth" style="max-width:330px;margin:30px auto;">
+  <h2>Registrasi Akun</h2>
+  <form id="register-form">
+    <label>Nama Lengkap</label> <input required placeholder="Nama pengguna">
+    <label>Email</label> <input required type="email" placeholder="Alamat Email">
+    <label>Kata Sandi</label> <input required type="password" placeholder="Password minimal 6 karakter">
+    <label>Konfirmasi Sandi</label> <input required type="password" placeholder="Ulangi sandi">
+    <label>Nama Restoran</label> <input required placeholder="RM Sederhana, dll">
+    <button type="submit">Daftar</button>
+  </form>
+  <div class="notif-box hidden" id="register-notif"></div>
+  <p style="margin-top:14px">Sudah punya akun? <a href="#login">Login</a></p>
+</div>
+<script>
+document.getElementById('register-form').onsubmit=function(e){e.preventDefault();
+  let nama=this.querySelectorAll('input')[0].value.trim(),
+      email=this.querySelectorAll('input')[1].value.trim(),
+      pw1=this.querySelectorAll('input[type=password]')[0].value,
+      pw2=this.querySelectorAll('input[type=password]')[1].value,
+      resto=this.querySelectorAll('input')[4].value.trim();
+  if(!nama||!email||pw1.length<6||!resto) return showToast('Data harus lengkap!',0);
+  if(pw1!==pw2) return showToast('Konfirmasi sandi tidak cocok!');
+  setSessionUser(email);showToast('Registrasi berhasil!',1);location.hash='home';
+}
+</script>

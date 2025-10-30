@@ -1,0 +1,32 @@
+<div class="card donut-card">
+  <div class="donut-heading"><span class="donut-icon">📊</span> <b>5 Menu Terlaris Minggu Ini</b></div>
+  <div class="donut-content">
+    <canvas id="donut-chart" width="124" height="124"></canvas>
+    <div class="donut-legend"><ul><li><span class="dot clr1"></span> Es Sirup (22%)</li><li><span class="dot clr2"></span> Keripik (22%)</li><li><span class="dot clr3"></span> Nasi Ayam (11%)</li><li><span class="dot clr4"></span> Nasi Kuning (11%)</li><li><span class="dot clr5"></span> Telor Balado (11%)</li></ul></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    setTimeout(()=>{
+      new Chart(document.getElementById('donut-chart'),{
+        type:'doughnut',
+        data:{labels:['Es Sirup','Keripik','Nasi Ayam','Nasi Kuning','Telor Balado'],
+          datasets:[{data:[22,22,11,11,11],backgroundColor:['#6366F1','#14B8A6','#FFBE6B','#FF62BC','#A685F9']}]
+        },options:{responsive:true,cutout:'60%',plugins:{legend:{display:false}}}
+      });
+    },200);
+  </script>
+</div>
+<div class="grid" style="grid-template-columns:1fr 1fr;gap:12px 18px;max-width:400px;margin:18px auto 27px auto;">
+  <div class="menu-card card-blue"><span class="menu-icon">🍽️</span><span class="menu-title">Menu</span><span class="menu-desc">Kelola menu restoran</span></div>
+  <div class="menu-card card-orange"><span class="menu-icon">📦</span><span class="menu-title">Bahan</span><span class="menu-desc">Kelola stok bahan</span></div>
+  <div class="menu-card card-green"><span class="menu-icon">📋</span><span class="menu-title">Resep</span><span class="menu-desc">Kelola resep menu</span></div>
+  <div class="menu-card card-pink"><span class="menu-icon">🧾</span><span class="menu-title">Transaksi</span><span class="menu-desc">Penjualan (POS)</span></div>
+  <div class="menu-card card-lime"><span class="menu-icon">💸</span><span class="menu-title">Pengeluaran</span><span class="menu-desc">Operasional harian</span></div>
+  <div class="menu-card card-purple"><span class="menu-icon">📈</span><span class="menu-title">Laporan</span><span class="menu-desc">Rangkuman statistik</span></div>
+</div>
+<div class="grid" style="grid-template-columns:1fr 1fr;gap:11px 17px;max-width:420px;margin:6px auto 10px auto;">
+  <div class="stat-card-stat"><span>💸</span> <div>Total Pendapatan Hari Ini</div><b class="text-blue">Rp 1.320.000</b></div>
+  <div class="stat-card-stat"><span>🛒</span> <div>Total Pengeluaran Hari Ini</div><b class="text-red">Rp 210.000</b></div>
+  <div class="stat-card-stat"><span>🧾</span> <div>Transaksi POS Hari Ini</div><b class="text-green">28</b></div>
+  <div class="stat-card-stat"><span>⭐</span> <div>Menu Terlaris</div><b class="text-violet">Es Sirup</b></div>
+</div>

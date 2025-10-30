@@ -1,0 +1,44 @@
+<div class="card">
+  <h2>Point of Sale / Kasir</h2>
+  <form class="form" id="trx-form">
+    <label>Pilih Menu</label> <select>
+      <option>Nasi Goreng</option><option>Mie Goreng</option><option>Es Teh Manis</option>
+    </select>
+    <label>Jumlah</label> <input type="number" min="1" value="1">
+    <label>Catatan</label> <input placeholder="Permintaan khusus...">
+    <button type="submit">Tambah ke Keranjang</button>
+  </form>
+</div>
+<div class="card">
+  <h3>Keranjang Transaksi</h3>
+  <table>
+    <thead><tr><th>Menu</th><th>Qty</th><th>Harga</th><th>Subtotal</th><th>Catatan</th><th>Aksi</th></tr></thead>
+    <tbody>
+      <tr><td>Nasi Goreng</td><td>2</td><td>Rp15.000</td><td>Rp30.000</td><td>- Pedas</td><td><button>Hapus</button></td></tr>
+      <tr><td>Mie Goreng</td><td>1</td><td>Rp13.000</td><td>Rp13.000</td><td> </td><td><button>Hapus</button></td></tr>
+      <tr><td>Ayam Goreng</td><td>2</td><td>Rp17.000</td><td>Rp34.000</td><td>Extra sambal</td><td><button>Hapus</button></td></tr>
+      <tr><td>Es Teh Manis</td><td>3</td><td>Rp6.000</td><td>Rp18.000</td><td>No ice</td><td><button>Hapus</button></td></tr>
+      <tr><td>Jus Alpukat</td><td>1</td><td>Rp12.000</td><td>Rp12.000</td><td>Less sugar</td><td><button>Hapus</button></td></tr>
+    </tbody>
+  </table>
+  <div class="blok-paybox">
+    <div>Total: <b>Rp107.000</b></div>
+    <label>Pembayaran</label><select><option>Cash</option><option>Debit</option><option>Transfer</option></select>
+    <label>Uang Diberikan</label><input type="number" value="120000" placeholder="0" style="margin-bottom:5px;">
+    <div>Kembalian: <b>Rp13.000</b></div>
+    <button class="pay-btn" type="button">Bayar & Selesai</button>
+  </div>
+</div>
+<div class="card">
+  <h3>Riwayat Transaksi</h3>
+  <table>
+    <thead><tr><th>Waktu</th><th>Item</th><th>Total</th><th>Metode</th><th>Kasir</th></tr></thead>
+    <tbody>
+      <tr><td>2024-07-03 12:00</td><td>3</td><td>Rp60.000</td><td>Cash</td><td>Budi</td></tr>
+      <tr><td>2024-07-03 13:21</td><td>2</td><td>Rp48.000</td><td>Debit</td><td>Sri</td></tr>
+      <tr><td>2024-07-03 15:33</td><td>4</td><td>Rp76.000</td><td>Cash</td><td>Doni</td></tr>
+      <tr><td>2024-07-02 14:10</td><td>2</td><td>Rp32.000</td><td>Transfer</td><td>Budi</td></tr>
+      <tr><td>2024-07-02 16:55</td><td>1</td><td>Rp17.000</td><td>Cash</td><td>Sri</td></tr>
+    </tbody>
+  </table>
+</div>

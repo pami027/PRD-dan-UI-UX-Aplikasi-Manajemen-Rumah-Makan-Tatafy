@@ -1,0 +1,19 @@
+<div class="card form-auth" style="max-width:320px;margin:28px auto;">
+  <h2>Login Pengguna</h2>
+  <form id="login-form">
+    <label>Email</label><input required type="email" placeholder="Alamat Email">
+    <label>Kata Sandi</label><input required type="password" placeholder="••••••">
+    <button type="submit">Masuk</button>
+  </form>
+  <div class="notif-box hidden" id="login-notif"></div>
+  <p style="margin-top:14px">Belum punya akun? <a href="#register">Register</a></p>
+  <p><a href="#forgot">Lupa Password?</a></p>
+</div>
+<script>
+document.getElementById('login-form').onsubmit=function(e){e.preventDefault();
+  let em=this.querySelector('input[type=email]').value.trim(),pw=this.querySelector('input[type=password]').value;
+  // dummy: login jika email ada di localStorage sessionuser atau user baru
+  let userOK = em && pw && (em=='demo@email.com'&&pw=='demo123'||true); // sesuaikan kredensial bila perlu
+  if(userOK){ setSessionUser(em); showToast('Login berhasil!',1); location.hash='home'; }else{ showToast('Email/sandi salah'); }
+}
+</script>
